@@ -16,6 +16,8 @@
   --surface-color-hover: rgba(255, 255, 255, 0.05);
   --highlight-color: rgba(255, 255, 255, 0.2);
   --switch-bg-url: url(./img/moon-stars.svg);
+  --scrollbar-color: rgb(40, 37, 67);
+  --track-scroll: rgb(0, 0, 0);
 }
 
 .light {
@@ -26,6 +28,8 @@
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
   --switch-bg-url: url(./img/sun.svg);
+  --scrollbar-color: rgb(231, 199, 239);
+  --track-scroll: rgb(255, 255, 255);
 }
 
 body {
@@ -79,7 +83,6 @@ body {
   transform: translateY(-50%);
 
   animation: slide-back 0.2s;
-
 }
 
 #switch button:hover {
@@ -198,4 +201,26 @@ footer {
   to {
     left: 0;
   }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #ff0000 #000000;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--track-scroll);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 10px;
+  border: 3px none #ffffff;
 }
